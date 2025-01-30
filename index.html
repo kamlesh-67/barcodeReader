@@ -91,7 +91,8 @@
         // Function to start a new Quagga instance
         function startScanner(checklistId, dataBarcode) {
             console.log("Starting scanner for checklist:", checklistId);
-
+const scanner = document.getElementById('scanner');
+            scanner.style.display = 'block';
             Quagga.init({
                 inputStream: {
                     type: 'LiveStream',
