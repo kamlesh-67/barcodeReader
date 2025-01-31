@@ -98,6 +98,13 @@
                 },
                 decoder: {
                     readers: ["code_128_reader"],
+                     debug: {
+                            drawBoundingBox: true,
+                            showFrequency: true,
+                            drawScanline: true,
+                            showPattern: true
+                        },
+                        frequency: 10 // Increase this value to slow down processing (default is 10)
                 },
             }, function (err) {
                 if (err) {
