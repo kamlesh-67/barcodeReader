@@ -96,19 +96,24 @@
                         facingMode: 'environment', // Use the rear camera
                     },
                 },
-                decoder: {
-                    readers: ["code_128_reader"],
-                    multiple: false,
-                     debug: {
-                            drawBoundingBox: true,
-                            showFrequency: true,
-                            drawScanline: true,
-                            showPattern: true
-                        },
-                        frequency: 10 // Increase this value to slow down processing (default is 10)
-                },
-                locate: true, // Helps in better barcode detection
-                halfSample: true // Makes it more stable but slower
+                frequency: 5,
+                    locator: {
+                        patchSize: 'large',
+                        halfSample: false,
+                    },
+                    numOfWorkers: 4,
+                    decoder: {
+                        readers: ["code_128_reader"],
+                        multiple: false,
+                         debug: {
+                                drawBoundingBox: true,
+                                showFrequency: true,
+                                drawScanline: true,
+                                showPattern: true
+                            },
+                            frequency: 10 // Increase this value to slow down processing (default is 10)
+                    },
+                    locate: true, // Helps in better barcode detection
             }, function (err) {
                 if (err) {
                     console.error("Initialization failed:", err);
